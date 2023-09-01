@@ -1,0 +1,48 @@
+<head>
+    <meta charset="UTF-8">
+    <title>Book Recommender System</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+
+    <style>
+        .text-white { color: white; }
+        .card {
+            margin-bottom: 20px;
+        }
+        .card-img-top {
+            max-height: 200px;
+            object-fit: contain;
+        }
+    </style>
+</head>
+<body style="background-color: black;">
+    <nav class="navbar" style="background-color: blueviolet;">
+        <p class="navbar-brand" style="font-size: 50px;">My Book Recommender</p>
+        <ul class="nav navbar-nav">
+            <li><a href="/">Home</a></li>
+            <li><a href="/recommend">Recommend</a></li>
+            <li><a>Contact</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <h1 class="text-white">Top 50 Books</h1> <!-- Added title here -->
+        <div class="row">
+            {% for i in range(book_name|length) %}
+            <div class="col-md-3" style="margin-top: 30px;">
+                <div class="card">
+                    <div class="card-body">
+                        <img class="card-img-top" src="{{image[i]}}" alt="Book Image">
+                        <h2 class="card-title">{{book_name[i]}}</h2>
+                        <h4 class="card-subtitle">{{author[i]}}</h4>
+                        <h4 class="card-text">Rating: {{rating[i]}}</h4>
+                        <h4 class="card-text">Number of Ratings: {{num_ratings[i]}}</h4>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-14ht6Np6rMxlTQry+dEl+RggIgfE6n0dK/OzN+FpgoGZV90hynL/nFRPWbYUNI6n" crossorigin="anonymous"></script>
+</body>

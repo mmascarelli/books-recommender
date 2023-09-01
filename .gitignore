@@ -1,0 +1,6 @@
+data
+app/books.pkl
+app/matrix.pkl
+app/ss.pkl
+app/top50.pkl
+.DS_Store
